@@ -1,0 +1,57 @@
+{
+  "name": "@qatadaazzeh/atcoder-api",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "atcoder",
+    "api",
+    "client"
+  ],
+  "author": "qatadaazzeh",
+  "license": "MIT",
+  "description": "Unofficial AtCoder API client for fetching contest and user data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qatadaazzeh/atcoder-api"
+  },
+  "bugs": {
+    "url": "https://github.com/qatadaazzeh/atcoder-api/issues"
+  },
+  "homepage": "https://github.com/qatadaazzeh/atcoder-api#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "cross-fetch": "^4.1.0",
+    "jest": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.3.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "node-fetch": "^2.6.12"
+  }
+}
