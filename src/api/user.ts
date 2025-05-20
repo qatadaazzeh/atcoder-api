@@ -31,12 +31,10 @@ export async function fetchUserInfo(userId: string): Promise<User> {
 
 
         let userContestCount = 0;
-        container.find('.col-md-9.col-sm-12 .dl-table tbody tr').each((_, row) => {
-            const label = $(row).find('td').first().text().trim();
-            if (label === 'Rated Matches') {
-                userContestCount = Number($(row).find('td').last().text().trim()) || 0;
-            }
-        });
+        const userContestCountElement = container.find('.col-md-9.col-sm-12 .dl-table tbody tr:nth-child(4) td').text().trim();
+        if (userContestCountElement) {
+            userContestCount = Number(userContestCountElement) || 0;
+        }
 
 
         const userContests: UserContest[] = await fetchUserContestList(userId);
